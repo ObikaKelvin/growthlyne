@@ -43,12 +43,23 @@ body{
     padding: 0rem 4rem;
 }
 
+.sticky{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    transform: translateY(0);
+    background-color: #f7f7f7 !important;
+    transition: transform .3s ease-in;
+}
+
 #top{
     display: flex;
     justify-content: center;
     background: var(--blue);
     font-size: 1.4rem;
     color: var(--white);
+    transition: transform .3s ease-in;
+    z-index: 5;
 }
 
 .topNav{
@@ -102,6 +113,8 @@ body{
     display: flex;
     justify-content: center;
     background-color: var(--white);
+    z-index: 6;
+    transition: all .3s ease-in;
 }
  
 
@@ -683,15 +696,35 @@ a.btn__hollow{
 
 .tiles__active{
     background-color: var(--blue);
-    color: var(--blue);
+    color: #fff;
 }
 
 .tiles__card{
     box-shadow: var(--box-shadow);
+    cursor: pointer;
+    transition: all .3s ease-in;
 }
+
+.tiles__card:hover{
+    background-color: var(--blue);
+}
+
+.tiles__card:focus{
+    background-color: var(--blue-light);
+}
+
+.tiles__card:hover .tiles__icon,
+.tiles__card:hover .tiles__text{
+    color: #fff;
+}
+
+
 
 .tiles__card:not(:last-child){
     margin-right: 4rem;
+}
+
+.tiles__icon{
 }
 
 .tiles__icon--container{
