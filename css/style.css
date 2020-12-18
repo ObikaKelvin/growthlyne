@@ -540,7 +540,7 @@ body{
 }
 
 .appendix__card:not(:last-child){
-    margin-right: auto;
+    margin-right: 4rem;
 }
 
 .appendix__card--icon{
