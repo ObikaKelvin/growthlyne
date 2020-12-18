@@ -165,7 +165,7 @@ body{
 .navbar__link,
 .navbar__link:link,
 .navbar__link:visited{
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     text-decoration: none;
     color: var(--black);
 }
@@ -178,6 +178,12 @@ body{
     position: relative;
     overflow: hidden;
     height: 54.6rem;
+}
+
+#banner__sm{
+    position: relative;
+    overflow: hidden;
+    height: 44.6rem;
 }
 
 .banner__image{
@@ -245,7 +251,6 @@ body{
     text-decoration: none;
     padding: 2rem 4rem;
     border-radius: .5rem;
-    border: none;
     font-size: 1.6rem;
     cursor: pointer;
     outline: none;
@@ -263,12 +268,14 @@ body{
 .btn__fill{
     background-color: var(--white);
     border: .4rem solid var(--white);
+    color: var(--black);
 }
 
-.btn__hollow{
+.btn__hollow,
+a.btn__hollow{
     background-color: transparent;
     color: var(--white);
-    border: .4rem solid var(--white);
+    border: .4rem solid var(--white) ;
 }
 
 #approach{
@@ -648,4 +655,92 @@ body{
 
 .contact__info--text{
     color: var(--grey-light-1);
+}
+
+#tiles{
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    margin-top: -4rem;
+    margin-bottom: 4rem;
+}
+
+.tiles__card{
+    width: 201.03px;
+    height: 127.08px;
+    background-color: white;
+    color: var(--blue);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.tiles__icon{
+    fill: var(--blue);
+}
+
+.tiles__active{
+    background-color: var(--blue);
+    color: var(--blue);
+}
+
+.tiles__card{
+    box-shadow: var(--box-shadow);
+}
+
+.tiles__card:not(:last-child){
+    margin-right: 4rem;
+}
+
+.tiles__icon--container{
+    margin-bottom: 1.5rem;
+}
+
+.tiles__path{
+    fill: currentColor;
+}
+
+#briefing{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 12rem;
+}
+
+.briefing__text{
+    width: 70%;
+    margin-bottom: 4rem;
+}
+
+.offerings{
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.offerings:not(:last-child){
+    margin-bottom: 4rem;
+}
+
+.offerings__item{
+    flex: 0 0 30%;
+}
+
+.offerings__title--container{
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+    
+}
+
+.offerings__title--icon{
+    margin-right: 1rem;
+}
+
+.offerings__title{
+    color: var(--blue);
+    font-size: 1.8rem;
 }
