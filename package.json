@@ -1,0 +1,11 @@
+{
+  "name": "growthlyne",
+  "version": "1.0.0",
+  "description": "static website for Growth Lyne",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Obika Kelvin",
+  "license": "ISC"
+}
