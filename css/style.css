@@ -142,13 +142,23 @@ body{
 
 .form__group{
     display: flex;
+    position: relative;
 }
 
 .form__input{
-    padding: .5rem 1.5rem;
+    padding: .2rem 1.5rem;
     width: 41.6rem;
     margin-right: 1.5rem;
     border: .2rem solid #848383;
+    display: flex;
+    align-items: center;
+    color: #848383;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.form__input:active{
+    border: .2rem solid var(--black-light);
 }
 
 .btn__search{
@@ -158,6 +168,24 @@ body{
     padding: 1rem;
     border: .2rem solid #848383;
     transition: all .2s ease-in;
+}
+
+.search__card{
+    position: absolute;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: var(--box-shadow);
+    top: 125%;
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    padding: 1.5rem;
+}
+
+.search__card input{
+    width: 100%;
+    padding: .5rem;
+    outline: none;
 }
 
 .btn__search:hover{

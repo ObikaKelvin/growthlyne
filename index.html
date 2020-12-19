@@ -45,10 +45,19 @@
     
                 <form action="" class="navbar__search--form">
                     <div class="form__group">
-                        <select class="form__input" >
+                        <div class="form__input">
+                            <span>SELECT A COMPANY</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12.002" height="6.808" viewBox="0 0 12.002 6.808"><path d="M1.6,13.5H11.988a.806.806,0,0,1,.569,1.377l-5.191,5.2a.809.809,0,0,1-1.142,0l-5.191-5.2A.806.806,0,0,1,1.6,13.5Z" transform="translate(-0.794 -13.5)" fill="#848383"/></svg>
+                        </div>
+
+                        <div class="search__card">
+                            <input type="text" name="search" autocomplete="off">
+                            <div class="search__results"></div>
+                        </div>
+                        <!-- <select class="form__input" >
                             <option value="SELECT A COMPANY">SELECT A COMPANY</option>
-                        </select>
-                        <input type="submit" value="GO" class="btn__search">
+                        </select> -->
+                        <input type="submit" value="GO" class="btn__search" >
                     </div>
                 </form>
               
@@ -92,7 +101,7 @@
             <p class="header__sub">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam asperiores alias earum, nesciunt reprehenderit vitae. Ab, provident nesciunt! Harum impedit magnam aut!</p>
         
             <div class="banner__buttons">
-                <a href="#" class="btn btn__fill">ABOUT US</a>
+                <a href="about_us.html" class="btn btn__fill">ABOUT US</a>
                 <a href="our_offerings.html" class="btn btn__hollow">OUR OFFERINGS</a>
             </div>
 
