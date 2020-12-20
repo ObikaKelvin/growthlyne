@@ -6,17 +6,11 @@ window.addEventListener("scroll", function() {
     if (window.pageYOffset > document.querySelector('#header').offsetTop) {
 
         document.querySelector('#header').classList.add( 'sticky');
-        top.style.transform = "translateY(-10rem)";
     } 
     else {
         document.querySelector('#header').classList.remove('sticky');
     }
 
-    if (st < lastScrollTop){
-        header.style.transform = "translateY(0)";
-    }
-    
-     lastScrollTop = st <= 0 ? 0 : st;
 });
 
 window.addEventListener("touchmove", function() {
