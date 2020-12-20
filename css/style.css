@@ -172,20 +172,61 @@ body{
 
 .search__card{
     position: absolute;
-    width: 100%;
+    width: 41.6rem;
+    max-height: 40rem;
+    overflow-y: hidden;
     background-color: #fff;
     box-shadow: var(--box-shadow);
     top: 125%;
-    z-index: 3;
+    z-index: 5;
     display: flex;
+    flex-direction: column;
+    visibility: hidden;
+    opacity: 0;
     justify-content: center;
+    align-items: center;
     padding: 1.5rem;
+    transition: all .3s ease-in;
+}
+
+.search__card--visible{
+    visibility: visible;
+    opacity: 1;
 }
 
 .search__card input{
     width: 100%;
     padding: .5rem;
     outline: none;
+    margin-bottom: 2rem;
+    border: .2rem solid var(--blue);
+    
+    border-radius: .5rem;
+}
+
+.search__results{
+    width: 100%;
+    list-style: none;
+    overflow-y: scroll;
+}
+
+.search__results--item{
+    padding: .5rem;
+    cursor: pointer;
+}
+
+.search__results--item:hover{
+    background-color: #e7e6e6;
+}
+
+.search__results--item:active{
+    background-color: var(--blue);
+    color: #fff;
+}
+
+.search__results--active{
+    background-color: var(--blue);
+    color: #fff;
 }
 
 .btn__search:hover{
@@ -750,9 +791,6 @@ a.btn__hollow{
 
 .tiles__card:not(:last-child){
     margin-right: 4rem;
-}
-
-.tiles__icon{
 }
 
 .tiles__icon--container{
