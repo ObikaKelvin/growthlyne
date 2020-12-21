@@ -942,7 +942,7 @@ a.btn__hollow{
     }
     .approach__card:not(:last-child) {
         margin-right: 0;
-        margin-bottom: 2rem;
+        margin-bottom: 4rem;
     }
     
 
@@ -971,18 +971,12 @@ a.btn__hollow{
 
 }
 
-@media only screen and (max-width: 980px){
-
-    html{
-        font-size: 50%;
-    }
-}
 
 
 @media only screen and (max-width: 915px){
     .testimonial {
         justify-content: flex-start;
-        width: 672px;
+        width: 722px;
         overflow-x: hidden;
         overflow-y: visible;
         padding: 4rem 0;
@@ -996,12 +990,21 @@ a.btn__hollow{
     }
 }
 
-@media only screen and (max-width: 699px){
+@media only screen and (max-width: 750px){
     .testimonial{
-        width: 447px;
+        width: 487px;
     }
+}
+
+@media only screen and (max-width: 699px){
+   
     .navbar__search--form {
         justify-content: flex-end;
+    }
+
+    .approach__card{
+        margin: 0; 
+        width: 6    0%;
     }
 }
 
