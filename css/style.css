@@ -127,7 +127,8 @@ body{
 
 .navbar__logo:link,
 .navbar__logo:visited{
-
+    display: flex;
+    align-items: center;
     font-size: 2.4rem;
     color: var(--blue);
     font-weight: bold;
@@ -269,14 +270,15 @@ body{
     height: 44.6rem;
 }
 
-.banner__image{
+.banner__image {
     width: 100%;
-    background-size: contain;
-    background-position: bottom;
+    height: inherit;
+    background: url(../images/business-improvements-1024x576.jpg);
+    background-size: cover;
+    background-position: center;
     position: absolute;
-    top: -45%;
+    top: 0;
     z-index: 1;
-
 }
 
 .banner__overlay{
@@ -296,6 +298,7 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     z-index: 3;
 }
 
@@ -877,6 +880,10 @@ a.btn__hollow{
     html{
         font-size: 56.25%;
     }
+
+    .banner__divider{
+        width: 68rem;
+    }
     
     .appendix__card--title{
         margin-bottom: 0;
@@ -945,13 +952,65 @@ a.btn__hollow{
 
 
 @media only screen and (max-width: 915px){
-
-    
     .testimonial {
         justify-content: flex-start;
-        width: 672.375px;
+        width: 672px;
         overflow-x: hidden;
         overflow-y: visible;
         padding: 4rem 0;
+    }
+}
+
+@media only screen and (max-width: 800px){
+    .footer__container{
+        flex-direction: column;
+        /* align-items: center; */
+    }
+}
+
+@media only screen and (max-width: 699px){
+    .testimonial{
+        width: 447px;
+    }
+    .navbar__search--form {
+        justify-content: flex-end;
+    }
+}
+
+@media only screen and (max-width: 650px){
+    .header__main{
+        font-size: 4.2rem;
+    }
+    
+    .banner__divider{
+        width: 58rem;
+    }
+
+    .header__sub{
+        width: 60rem;
+    }
+
+    .navbar__search--form{
+        display: none;
+    }
+
+    .navbar{
+        justify-content: center;
+    }
+}
+
+@media only screen and (max-width: 500px){
+    .header__sub{
+        font-size: 1.4rem;
+        width: 50rem;
+    }
+
+    .header__main{
+        font-size: 3.8rem;
+        align-self: center;
+    }
+    
+    .banner__divider{
+        width: 52rem;
     }
 }
