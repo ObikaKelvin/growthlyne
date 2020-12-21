@@ -902,6 +902,14 @@ a.btn__hollow{
     html{
         font-size: 53.6%;
     }
+
+    #approach{
+        padding: 8.8rem 6rem;
+    }
+
+    .approach__card:first-child{
+        margin-left: 6rem;
+    }
 }
 
 @media only screen and (max-width: 1240px){
@@ -921,6 +929,26 @@ a.btn__hollow{
 @media only screen and (max-width: 1240px){
     .appendix__card:not(:last-child) {
         margin-right: 2.5rem;
+    }
+
+    #approach{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .approach__card:first-child {
+        margin-left: 0;
+    }
+    .approach__card:not(:last-child) {
+        margin-right: 0;
+        margin-bottom: 2rem;
+    }
+    
+
+    .approach__card{
+        margin: 0; 
+        width: 40%;
     }
 }
 
