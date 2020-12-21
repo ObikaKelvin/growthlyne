@@ -341,6 +341,7 @@ body{
     cursor: pointer;
     outline: none;
     transition: all .2s ease-in;
+    text-align: center;
 }
 
 .btn:hover{
@@ -397,6 +398,11 @@ a.btn__hollow{
     justify-content: center;
     align-items: center;
 
+}
+
+.approach__card--svg{
+    width: 4.4rem;
+    height: 4.4rem;
 }
 
 .approach__card--title{
@@ -1028,6 +1034,33 @@ a.btn__hollow{
     .navbar{
         justify-content: center;
     }
+
+    .approach__card{
+        width: 65%;
+        margin-left: 4rem;
+    }
+
+    .approach__card:first-child {
+        margin-left: 4rem;
+    }
+
+    #clients .content {
+        padding: 4rem 2rem;
+    }
+}
+
+@media only screen and (max-width: 550px){
+    .approach__card--svg{
+        width: 3.5rem;
+        height: 3.5rem;
+    }
+
+    .approach__card--icon{
+        width: 11.3rem;
+        height: 9.6rem
+    }
+
+    
 }
 
 @media only screen and (max-width: 500px){
@@ -1042,6 +1075,76 @@ a.btn__hollow{
     }
     
     .banner__divider{
-        width: 52rem;
+        width: 44rem;
+    }
+
+    .testimonial{
+        width: 229px;
+    }
+
+    .header__secondary{
+        font-size: 3rem;
+    }
+
+    .header__main{
+        font-size: 3.2rem;
+    }
+
+}
+
+@media only screen and (max-width: 450px){
+
+    .banner__buttons{
+        flex-direction: column;
+    }
+
+    .banner__buttons > * {
+        margin-right: 0rem;
+    }
+
+    .banner__buttons > *:not(:last-child) {
+        margin-bottom: 2rem;
+    }
+
+    .header__sub{
+        width: 40rem;
+        margin-bottom: 4rem;
+    }
+
+    .topNav{
+        flex-direction: column;
+    }
+
+    .topNav__left{
+        flex-direction: column;
+    }
+
+    .topNav__left--info{
+        align-self: center;
+        margin-bottom: 2rem;
+    }
+}
+
+@media only screen and (max-width: 400px){
+    .btn,
+    .btn:link{
+        font-size: 1.4rem;
+    }
+
+    .banner__divider{
+        width: 34rem;
+    }
+
+    .header__main{
+        font-size: 2.8rem;
+        width: 100%;
+    }
+
+    .header__sub{
+        width: 30rem;
+    }
+
+    .header__secondary{
+        font-size: 2.4rem;
     }
 }
