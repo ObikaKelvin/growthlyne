@@ -120,7 +120,7 @@ body{
 }
  
 .nav__collapse{
-    
+    cursor: pointer;
     height: 100%;
     display: none;
     justify-content: center;
@@ -129,9 +129,7 @@ body{
 }
 
 .nav__search{
-    
-    
-    
+    cursor: pointer;
     height: 100%;
     display: none;
     justify-content: center;
@@ -140,6 +138,7 @@ body{
 }
 
 .nav__search--close{
+    cursor: pointer;
     height: 100%;
     display: none;
     justify-content: center;
@@ -148,7 +147,7 @@ body{
 }
 
 .nav__close{
-    
+    cursor: pointer;
     height: 100%;
     display: none;
     justify-content: center;
@@ -293,8 +292,16 @@ body{
     color: var(--black);
 }
 
+.navbar__link:hover{
+    color: var(--blue);
+}
+
 .navbar__item:not(:last-child){
-    margin-right: 1.5rem;
+    border-right: .1rem solid #858585;
+}
+
+.navbar__item{
+    padding: .5rem .5rem
 }
 
 #banner{
@@ -806,6 +813,8 @@ a.btn__hollow{
 
 .tiles__icon{
     fill: var(--blue);
+    width: 36px;
+    height: 36px;
 }
 
 .tiles__active{
@@ -839,7 +848,11 @@ a.btn__hollow{
 }
 
 .tiles__icon--container{
+    width: 36px;
+    height: 36px;
     margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: center
 }
 
 .tiles__path{
@@ -958,8 +971,23 @@ a.btn__hollow{
 }
 
 @media only screen and (max-width: 1240px){
+
+    .tiles__card{
+        width: 140px;
+        height: 90px;
+    }
+
+    .tiles__icon{
+        width: 22px;
+        height: 22px;
+    }
+
     .navbar__list{
         display: none;
+    }
+
+    .navbar__item:not(:last-child) {
+        border-right: none;
     }
 
     .navbar{
@@ -1064,6 +1092,29 @@ a.btn__hollow{
         overflow-y: visible;
         padding: 4rem 0;
     }
+
+    .tiles__icon--container{
+        margin-bottom: 0;
+    }
+
+    .tiles__card{
+        width: 120px;
+        height: 90px;
+        padding: .5rem 0;
+    }
+
+    .tiles__card:not(:last-child) {
+        margin-right: 2rem;
+    }
+
+    .tiles__icon{
+        width: 18px;
+        height: 18px;
+    }
+
+    .tiles__text{
+        font-size: 11px
+    }
 }
 
 @media only screen and (max-width: 800px){
@@ -1072,13 +1123,29 @@ a.btn__hollow{
     }
 
     .navbar__search--form{
+        justify-content: center;
         display: none;
-        position: absolute;
-        z-index: 5;
-        background-color: #fff;
-        transform: translate(-50%, -50%);
-        top: 50%;
-        left: 50%;
+        background-color: #fff;    
+    }
+
+    .offerings{
+        flex-direction: column
+    }
+
+    .offerings__item:not(:last-child){
+        margin-bottom: 4rem
+    }
+    
+    .search__card{
+        width: 100%
+    }
+    
+    .form__group{
+        width: 100%
+    }
+    
+    .form__input{
+        width: 100%
     }
 
     
@@ -1094,14 +1161,28 @@ a.btn__hollow{
 }
 
 @media only screen and (max-width: 699px){
-   
-    .navbar__search--form {
-        justify-content: flex-end;
-    }
 
     .approach__card{
         margin: 0; 
-        width: 6    0%;
+        width: 60%;
+    }
+
+    .tiles__card{
+        width: 80px;
+        height: 50px;
+    }
+
+    .tiles__card:not(:last-child) {
+        margin-right: 1rem;
+    }
+
+    .tiles__icon{
+        width: 14px;
+        height: 14px;
+    }
+
+    .tiles__text{
+        font-size: 10px
     }
 }
 
@@ -1177,6 +1258,10 @@ a.btn__hollow{
 
 @media only screen and (max-width: 450px){
 
+    #top{
+        display: none
+    }
+
     .banner__buttons{
         flex-direction: column;
     }
@@ -1206,6 +1291,22 @@ a.btn__hollow{
         align-self: center;
         margin-bottom: 2rem;
     }
+
+
+    .tiles__card{
+        
+        padding: .5rem .5rem;
+    }
+
+
+    .tiles__icon{
+        width: 12px;
+        height: 12px;
+    }
+
+    .tiles__text{
+        font-size: 8px
+    }
 }
 
 @media only screen and (max-width: 400px){
@@ -1229,5 +1330,57 @@ a.btn__hollow{
 
     .header__secondary{
         font-size: 2.4rem;
+    }
+
+    .navbar__logo:link,
+    .navbar__logo:visited{
+        font-size: 1.8rem
+    }
+     
+    .nav__collapse{
+        width: 12px;
+        height: 12px;
+    }
+    
+    .nav__close{
+        width: 12px;
+        height: 12px;
+    }
+
+    .nav__search{
+        width: 12px;
+        height: 12px;
+    }
+    
+    .nav__search--close{
+        width: 12px;
+        height: 12px;
+    }
+
+    .btn__search{
+        font-size: 11px;
+    }
+
+    .form__input span{
+        font-size: 11px
+    }
+
+    .tiles__card{
+        
+        padding: .2rem .2rem;
+    }
+
+    .tiles__card:not(:last-child){
+        margin-right: 0;
+    }
+
+
+    .tiles__icon{
+        width: 12px;
+        height: 12px;
+    }
+
+    .tiles__text{
+        font-size: 8px
     }
 }

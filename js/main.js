@@ -117,6 +117,7 @@ document.querySelector('.nav__search').addEventListener('click', function(e){
     document.querySelector('.navbar__search--form').style.display = "flex";
     document.querySelector('.nav__search--close').style.display = "flex";
     document.querySelector('.nav__search').style.display = "none";
+    document.querySelector('.navbar__logo').style.display = "none";
 
     
 });
@@ -125,6 +126,8 @@ document.querySelector('.nav__search--close').addEventListener('click', function
     document.querySelector('.navbar__search--form').style.display = "none";
     document.querySelector('.nav__search').style.display = "flex";
     document.querySelector('.nav__search--close').style.display = "none"; 
+    document.querySelector('.navbar__logo').style.display = "flex";
+
 });
 
 window.addEventListener('resize', function () {
