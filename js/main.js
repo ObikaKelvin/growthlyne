@@ -76,6 +76,7 @@ document.querySelector('.search__results').addEventListener('click', function(e)
 });
 
 let count = 0;
+
 document.querySelector('#search').addEventListener('input', function(e){
     let list = '';
     let term = e.target.value.toUpperCase();
@@ -95,4 +96,28 @@ document.querySelector('#search').addEventListener('input', function(e){
     document.querySelector('.search__results').innerHTML = list;
 
     count = 0;
+});
+
+document.querySelector('.nav__collapse').addEventListener('click', function(e){
+
+    const navList = document.querySelector('.navbar__list');
+    const searchForm = document.querySelector('.navbar__search--form');
+    if(navList.style.display === 'flex'){
+        navList.style.display = 'none';
+    }
+    else{
+        navList.style.display = 'flex';
+    }
+
+    if(searchForm.style.display === 'none'){
+        searchForm.style.display = 'flex';
+        
+        if(searchForm.style.display === 'flex'){
+            searchForm.style.display = 'none';
+        }
+        else{
+            searchForm.style.display = 'flex';
+        }
+    }
+   
 });
