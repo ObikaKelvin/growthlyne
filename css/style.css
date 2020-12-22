@@ -1254,6 +1254,25 @@ a.btn__hollow{
         font-size: 3.2rem;
     }
 
+    .approach__card--title{
+        margin-top: 8rem;
+    }
+
+    .approach__card--icon{
+        position: absolute;
+        transform: translate(-50%, -50%);
+        left: 50%;
+        top: 6%;
+    }
+    .approach__card:first-child {
+        margin-left: 0;
+    }
+
+    .approach__card{
+        width: 80%;
+        margin-left: 0;
+    }
+
 }
 
 @media only screen and (max-width: 450px){
@@ -1383,4 +1402,30 @@ a.btn__hollow{
     .tiles__text{
         font-size: 8px
     }
+}
+
+
+@media only screen and (max-width: 350px){
+    .approach__card--footer{
+        width: 100%;
+    }
+
+    #approach{
+        padding: 8.8rem 0;
+    }
+
+    .approach__card{
+        padding: 2rem 0;
+        width: 100%;
+    }
+
+    .approach__card--body{
+        padding: 0 1rem;
+    }
+
+    .footer__container{
+        padding: 0 4rem;
+    }
+
+    
 }
