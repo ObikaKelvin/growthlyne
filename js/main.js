@@ -154,7 +154,6 @@ window.addEventListener('resize', function () {
         document.querySelector('.navbar__search--form').style.display = "none";
         document.querySelector('.nav__search--close').style.display = "none";
         document.querySelector('.nav__search').style.display = "flex";
-    
     }
 
 })
