@@ -154,7 +154,15 @@ window.addEventListener('resize', function () {
         document.querySelector('.navbar__search--form').style.display = "none";
         document.querySelector('.nav__search--close').style.display = "none";
         document.querySelector('.nav__search').style.display = "flex";
-    
     }
 
 })
+
+if ("serviceWorker" in navigator) {
+    window.addEventListener("load", function() {
+        navigator.serviceWorker
+        .register("/serviceWorker.js")
+        .then(res => console.log("service worker registered"))
+        .catch(err => console.log("service worker not registered", err))
+    })
+}
