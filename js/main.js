@@ -1,3 +1,12 @@
+if ("serviceWorker" in navigator) {
+    window.addEventListener("load", function() {
+        navigator.serviceWorker
+        .register("/growthlyne/serviceWorker.js")
+        .then(res => console.log("service worker registered"))
+        .catch(err => console.log("service worker not registered", err))
+    })
+}
+
 let lastScrollTop = 0;
 
 window.addEventListener("scroll", function() {
@@ -158,11 +167,3 @@ window.addEventListener('resize', function () {
 
 })
 
-if ("serviceWorker" in navigator) {
-    window.addEventListener("load", function() {
-        navigator.serviceWorker
-        .register("/growthlyne/serviceWorker.js")
-        .then(res => console.log("service worker registered"))
-        .catch(err => console.log("service worker not registered", err))
-    })
-}
