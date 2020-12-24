@@ -525,8 +525,21 @@ a.btn__hollow{
 
 .header__secondary{
     color: var(--white);
-    font-size: 3.6rem;
+    font-size: 2.8rem;
     text-align: center;
+}
+
+.header__tertiary{
+    font-size: 2.0rem;
+    text-align: left;
+    margin-bottom: 1rem;
+}
+
+.job{
+    width: 70%;
+    line-height: 150%;
+    font-size: 1.6rem;
+    margin-bottom: 4rem;
 }
 
 .testimonial__header{
@@ -607,6 +620,8 @@ a.btn__hollow{
     background-color: var(--white);
     opacity: 100%;
 }
+
+
 
 #contact{
     padding: 6rem 0;
@@ -797,7 +812,7 @@ a.btn__hollow{
     display: flex;
     justify-content: center;
     margin-top: -4rem;
-    margin-bottom: 4rem;
+    /* margin-bottom: 4rem; */
 }
 
 .tiles__card{
@@ -865,11 +880,14 @@ a.btn__hollow{
     align-items: center;
     flex-direction: column;
     margin-bottom: 12rem;
+    margin-top: 6rem;
 }
 
 .briefing__text{
     width: 70%;
     margin-bottom: 4rem;
+    line-height: 150%;
+    font-size: 1.6rem;
 }
 
 .offerings{
@@ -900,6 +918,13 @@ a.btn__hollow{
 .offerings__title{
     color: var(--blue);
     font-size: 1.8rem;
+}
+
+.survey__header{
+    color: #000000;
+    margin-bottom: 2rem;
+    width: 70%;
+    text-align: left;
 }
 
 @media only screen and (max-width: 1700px){
@@ -1247,7 +1272,7 @@ a.btn__hollow{
     }
 
     .header__secondary{
-        font-size: 3rem;
+        font-size: 2.4rem;
     }
 
     .header__main{
@@ -1348,7 +1373,7 @@ a.btn__hollow{
     }
 
     .header__secondary{
-        font-size: 2.4rem;
+        font-size: 2rem;
     }
 
     .navbar__logo:link,
