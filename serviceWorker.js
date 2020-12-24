@@ -2,10 +2,10 @@ const growthLyne = "growth-lyne-v1"
 const assets = [
   
   "/index.html",
-  "/about_us.html",
+  "/about.html",
   "/contact.html",
-  "/knowledge_library.html",
-  "/our_offerings.html",
+  "/knowledgelibrary.html",
+  "/offerings.html",
   "/css/style.css",
   "/js/main.js",
   "/images/coffee1.jpg",
