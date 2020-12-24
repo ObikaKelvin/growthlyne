@@ -1,6 +1,6 @@
 const growthLyne = "growth-lyne-v1"
 const assets = [
-  "/",
+  
   "/index.html",
   "/about_us.html",
   "/contact.html",
