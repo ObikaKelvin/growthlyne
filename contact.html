@@ -88,9 +88,9 @@
                     <li class="navbar__item">
                     <a class="navbar__link" href="#">JOIN OUR PANEL</a>
                     </li>
-                    <li class="navbar__item">
+                     <!-- <li class="navbar__item">
                     <a class="navbar__link" href="contact.html">CONTACT US</a>
-                    </li>
+                    </li> -->
                     <li class="navbar__item">
                     <a class="navbar__link" href="careers.html">CAREERS</a>
                     </li>
@@ -111,14 +111,71 @@
               
     </section>
 
+    <section id="banner__sm">
+        <div class="banner__overlay"></div>
+        <div class="banner__image"></div>
+        <div class="banner__text">
+            <h1 class="header__main">CAREERS</h1>
+            <img class="banner__divider" src="images/Group 18.png" alt="" srcset="">
+            
+            <p class="header__sub">We're working towards revolutionizing business research for the world.</p>
+        </div>
+    </section>
+
+
     <section id="contact">
         <div class="steps">
 
         </div>
-        <form action="" class="form__enquiry">
-            <h4>Fill in your information</h4>
+        <form method="post" action="" class="form__register">
 
-            <input type="text">
+            <div class="form__heading"><h3>Fill in your information</h3></div>
+
+            <div class="form__group">
+                
+                <span class="form__icon--start fa fa-user"></span><input type="text" class="form__input" name="first_name" id="first_name" placeholder="First Name" required>
+                <label for="first_name" class="form__label">First Name</label>
+               
+            </div>
+
+            <div class="form__group">
+                <span class="form__icon--start fa fa-user"></span><input type="text" class="form__input" name="last_name" id="last_name" placeholder="Last Name"  required>
+                <label for="last_name" class="form__label">Last Name</label>
+            </div>
+          
+            <div class="form__group">
+                <span class="form__icon--start fa fa-envelope"></span><input type="text" class="form__input" name="email__register" id="email__register" placeholder="Email Address"  required>
+                <label for="email__register" class="form__label">Email Address</label>
+                
+            </div>
+
+            <div class="form__group">
+                <span class="form__icon--start fa fa-lock"></span><input type="password" class="form__input" name="password__register" id="password__register" placeholder="Password" required><span class="form__icon--end fa fa-eye"></span>
+                <label for="password__register" class="form__label">Password</label>
+            </div>
+
+            <div class="form__group">
+                <span class="form__icon--start fa fa-lock"></span><input type="password" class="form__input" name="confirm_password" id="confirm_password" placeholder="Confirm Password" required><span class="form__icon--end fa fa-eye"></span>
+                <label for="confirm_password" class="form__label">Confirm Password</label>
+            </div>
+
+            <input class="form__btn" name='register__btn' id="register__btn" type="submit" value="REGISTER">
+
+            <div class="info">
+                <ul class="info__list">
+                    <!-- <h4 class="info__list--header">guide</h4> -->
+                    <li class="info__list--item">all fields are required</li>
+                    <li class="info__list--item">all names should be 2 to 25 characters long</li>
+                    <li class="info__list--item">Password should be 8 characters or more</li>
+                </ul>
+            </div>
+
+            <div class="form__footer">
+                <span>Already have an account? <a href="" id="signin">Sign in here</a> </span>
+            </div>
+
+           
+
         </form>
     </section>
 
