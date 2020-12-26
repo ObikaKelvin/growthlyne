@@ -180,16 +180,38 @@ body{
     justify-content: flex-end;
 }
 
-.form__group{
+
+
+.form__group,
+.form-group,
+.form-group__full{
     display: flex;
     position: relative;
 }
 
-.form__group:not(:last-child) {
+.form-group,
+.form-group__full{
+    flex-direction: column;
+    width: 30rem;
+}
+
+.form-group__full{
+width: 100%;
+}
+
+
+.form-row{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.form-row:not(:last-child) {
     margin-bottom: 2rem; 
 }
 
-.navbar__search--form .form__input{
+.form__input,
+.form__input{
     padding: .2rem 1.5rem;
     width: 41.6rem;
     margin-right: 1.5rem;
@@ -205,54 +227,63 @@ body{
     border: .2rem solid var(--black-light);
 }
 
-.form__input {
+.form-heading {
+    margin-bottom: 4rem;
+    font-size: 2rem; 
+}
+  
+.form-input {
     font-family: inherit;
     font-size: inherit;
-    width: 45rem;
+    width: 30rem;
     padding: 1rem 3rem;
     background-color: transparent;
     outline: none;
     border: .05rem solid #000;
-    transition: all .3s; }
-    .form__input:focus {
-      border: .05rem solid #55c57a; }
-    .form__input:focus:invalid {
-      border: .05rem solid #ff7730; }
-    .form__input--error {
-      border: .05rem solid #ff3030 !important; }
-  .form__label {
+    transition: all .3s; 
+}
+
+
+
+.form-input__full{
+    width: 100%;
+}
+
+.form-input:not(:last-child) {
+    margin-right: 4rem;
+}
+
+.form-input:focus {
+    border: .05rem solid #55c57a; 
+}
+
+.form-input:focus:invalid {
+    border: .05rem solid #ff7730; 
+}
+
+.form-label {
     display: block;
     visibility: visible;
     opacity: 1;
     transition: all .2s;
     font-size: 1.4rem;
-    margin-top: 1rem;
-    
-    color: #55c57a; }
-    .form__label--error {
-      display: block;
-      visibility: visible;
-      opacity: 1;
-      transition: all .2s;
-      font-size: 1.4rem;
-      margin-top: 1rem;
-      transform: translateX(2rem);
-      color: #ff3030;
-      transition: all .2s;
-      /* animation: inputShake .3s;  */
-    }
-  
-  .form__icon--start {
+    margin-bottom: 1rem;
+}
+
+.form__icon--start {
     position: relative;
     margin-right: -2rem;
-    z-index: 5; }
-  .form__icon--end {
+    z-index: 5; 
+}
+
+.form__icon--end {
     position: relative;
     margin-left: -2rem;
     cursor: pointer;
-    z-index: 5; }
+    z-index: 5; 
+}
 
-  .form__btn {
+.form__btn {
     padding: 2rem 4rem;
     cursor: pointer;
     outline: none;
@@ -261,12 +292,18 @@ body{
     background-color: rgba(0, 0, 0, 0.6);
     color: #fff;
     transition: all .2s;
-    margin-bottom: 4rem; }
-    .form__btn:hover {
-      background-color: rgba(0, 0, 0, 0.8);
-      transform: translateY(-0.3rem); }
-    .form__btn:focus {
-      transform: translateY(0.3rem); }
+    margin-bottom: 4rem; 
+}
+
+.form__btn:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    transform: translateY(-0.3rem); 
+}
+
+.form__btn:focus {
+    transform: translateY(0.3rem); 
+}
+
 
 .btn__search{
     cursor: pointer;
@@ -688,12 +725,11 @@ a.btn__hollow{
     opacity: 100%;
 }
 
-
-
 #contact{
     padding: 6rem 0;
     display: flex;
     justify-content: center;
+    align-items: center;
     margin-bottom: 4rem;
 }
 
@@ -1210,6 +1246,23 @@ a.btn__hollow{
 }
 
 @media only screen and (max-width: 800px){
+
+    .form-row{
+        width: 40rem;
+    }
+
+    .form-group{
+        width: 100%;
+    }
+
+    .form-group:not(:last-child) {
+        margin-bottom: 2rem;
+    }
+
+    .form-input:not(:last-child) {
+        width: 100%;
+    }
+
     .footer__container{
         flex-direction: column;
     }
@@ -1320,6 +1373,11 @@ a.btn__hollow{
 }
 
 @media only screen and (max-width: 500px){
+
+    .form-row{
+        width: 30rem;
+    }
+
     .header__sub{
         font-size: 1.4rem;
         width: 50rem;
@@ -1368,6 +1426,14 @@ a.btn__hollow{
 }
 
 @media only screen and (max-width: 450px){
+
+    .form-row{
+        width: 20rem;
+    }
+
+    .container{
+        padding: 0;
+    }
 
     #top{
         display: none
@@ -1498,6 +1564,11 @@ a.btn__hollow{
 
 
 @media only screen and (max-width: 350px){
+
+    .form-row{
+        width: 15rem;
+    }
+
     .approach__card--footer{
         width: 100%;
     }
