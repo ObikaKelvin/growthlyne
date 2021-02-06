@@ -64,6 +64,14 @@ document.querySelector('.form__input').addEventListener('click', function(){
     
     document.querySelector('.search__card').classList.toggle('search__card--visible');
 
+    if(!document.querySelector('.search__card--visible')){
+        this.parentNode.children[0].children[1].style.transform = 'rotate(0deg)';
+    }
+    else{
+        this.parentNode.children[0].children[1].style.transform = 'rotate(180deg)';
+
+    }
+
     document.querySelectorAll('.search__results--item').forEach(element => {    
         const search = document.querySelector('.form__input span');
         if( search.textContent === element.textContent){
@@ -152,6 +160,7 @@ window.addEventListener('resize', function () {
         document.querySelector('.nav__close').style.display = "none";
         const navList = document.querySelector('.navbar__list');
         navList.style.display = 'none';
+
     }
 
     if(document.documentElement.clientWidth >= 800 ){
@@ -162,8 +171,86 @@ window.addEventListener('resize', function () {
     else{
         document.querySelector('.navbar__search--form').style.display = "none";
         document.querySelector('.nav__search--close').style.display = "none";
-        document.querySelector('.nav__search').style.display = "flex";
+        document.querySelector('.nav__search').style.display = "flex";        
     }
 
-})
+});
+
+document.querySelectorAll('.navbar__item--dropdown').forEach(element => {
+    element.addEventListener('mouseover', function (e) {
+        const sub = document.querySelector(`[data-nav-dropdown = ${this.id}]`);
+        console.log(this.id);
+        console.log(sub)
+
+        sub.style.display = "block";
+    })
+
+    element.addEventListener('mouseout', function (e) {
+        const sub = document.querySelector(`[data-nav-dropdown = ${this.id}]`);
+        sub.style.display = "none";
+    })
+});
+
+const tileCards = document.querySelectorAll('.tiles__card');
+
+document.querySelectorAll('.tiles__card').forEach((element, index) => {
+    const briefings = document.querySelectorAll('.briefing');
+    element.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelectorAll('.tiles__card').forEach((element1, index) => {
+            
+            if(this.id !== element1.id){
+                console.log(true)
+                element1.classList.remove('tiles__active');
+            }
+            else{
+            element1.classList.add('tiles__active');
+
+            }
+        });
+        briefings.forEach((briefing, index1) => {
+
+            if(index === index1){
+
+                briefing.style.display = 'flex';
+            }
+            else{
+                briefing.style.display = 'none';
+
+            }
+        })
+    });
+
+});
+
+window.addEventListener('load', () => {
+    const hash = this.location.href.split('#')[1]
+    const briefings = document.querySelectorAll('.briefing');
+    const tileCards = document.querySelectorAll('.tiles__card');
+    console.log(hash)
+
+    if (!hash) {
+        console.log(tileCards[0])
+        tileCards[0].classList.add('tiles__active');
+        briefings[0].style.display = 'flex';
+        return;
+    }
+
+    tileCards.forEach((element1, index) => {
+        element1.classList.remove('tiles__active');
+    });
+    
+    briefings.forEach((briefing, index1) => {
+
+        briefing.style.display = 'none';
+
+    })
+
+    const briefing = document.querySelector(`[data-id=${hash}]`);
+    console.log(briefing)
+    briefing.style.display = 'flex';
+    document.querySelector(`#${hash}`).classList.add('tiles__active');
+
+});
+
 
