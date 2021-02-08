@@ -14,9 +14,16 @@ window.addEventListener("scroll", function() {
     if (window.pageYOffset > document.querySelector('#header').offsetTop) {
 
         document.querySelector('#header').classList.add( 'sticky');
+        document.querySelectorAll('.navbar__list--sub').forEach(element => {
+            element.classList.add( 'sticky__sub');
+        });
+        
     } 
     else {
         document.querySelector('#header').classList.remove('sticky');
+        document.querySelectorAll('.navbar__list--sub').forEach(element => {
+            element.classList.remove( 'sticky__sub');
+        });
     }
 
 });
@@ -54,66 +61,70 @@ const state = {
     ]
 }
 
-document.querySelector('.form__input').addEventListener('click', function(){
-    let list = '';
-    state.searchKeyWords.forEach(cur => {
-        list += `<li class="search__results--item">${cur}</li>`;
-    });
-
-    document.querySelector('.search__results').innerHTML = list;
+const search = document.querySelector('.form__input');
+if(search){
+    search.addEventListener('click', function(){
+        let list = '';
+        state.searchKeyWords.forEach(cur => {
+            list += `<li class="search__results--item">${cur}</li>`;
+        });
     
-    document.querySelector('.search__card').classList.toggle('search__card--visible');
-
-    if(!document.querySelector('.search__card--visible')){
-        this.parentNode.children[0].children[1].style.transform = 'rotate(0deg)';
-    }
-    else{
-        this.parentNode.children[0].children[1].style.transform = 'rotate(180deg)';
-
-    }
-
-    document.querySelectorAll('.search__results--item').forEach(element => {    
-        const search = document.querySelector('.form__input span');
-        if( search.textContent === element.textContent){
-            element.classList.add('search__results--active'); 
+        document.querySelector('.search__results').innerHTML = list;
+        
+        document.querySelector('.search__card').classList.toggle('search__card--visible');
+    
+        if(!document.querySelector('.search__card--visible')){
+            this.parentNode.children[0].children[1].style.transform = 'rotate(0deg)';
         }
         else{
-            element.classList.remove('search__results--active');
-        }  
-    });
-
-    setTimeout(() => {
-        document.querySelector('#search').focus();
-    }, 1000);
-});
-
-document.querySelector('.search__results').addEventListener('click', function(e){
-    document.querySelector('.form__input span').textContent = e.target.textContent; 
-    document.querySelector('.search__card').classList.remove('search__card--visible');
-});
-
-let count = 0;
-
-document.querySelector('#search').addEventListener('input', function(e){
-    let list = '';
-    let term = e.target.value.toUpperCase();
+            this.parentNode.children[0].children[1].style.transform = 'rotate(180deg)';
     
-    state.searchKeyWords.forEach((cur, index) => {
-        current = cur.toUpperCase();
-        
-        if(current.startsWith(term)){
-            list += `<li class="search__results--item ${count === 0 ? 'search__results--active' : ''}">${cur}</li>`;
-            ++count;
-        }  
+        }
+    
+        document.querySelectorAll('.search__results--item').forEach(element => {    
+            const search = document.querySelector('.form__input span');
+            if( search.textContent === element.textContent){
+                element.classList.add('search__results--active'); 
+            }
+            else{
+                element.classList.remove('search__results--active');
+            }  
+        });
+    
+        setTimeout(() => {
+            document.querySelector('#search').focus();
+        }, 1000);
     });
 
-    if(!list){
-        list = `No result matches "${e.target.value}"`;
-    }      
-    document.querySelector('.search__results').innerHTML = list;
+    document.querySelector('.search__results').addEventListener('click', function(e){
+        document.querySelector('.form__input span').textContent = e.target.textContent; 
+        document.querySelector('.search__card').classList.remove('search__card--visible');
+    });
 
-    count = 0;
-});
+    let count = 0;
+    
+    document.querySelector('#search').addEventListener('input', function(e){
+        let list = '';
+        let term = e.target.value.toUpperCase();
+        
+        state.searchKeyWords.forEach((cur, index) => {
+            current = cur.toUpperCase();
+            
+            if(current.startsWith(term)){
+                list += `<li class="search__results--item ${count === 0 ? 'search__results--active' : ''}">${cur}</li>`;
+                ++count;
+            }  
+        });
+    
+        if(!list){
+            list = `No result matches "${e.target.value}"`;
+        }      
+        document.querySelector('.search__results').innerHTML = list;
+    
+        count = 0;
+    });
+}
+
 
 document.querySelector('.nav__collapse').addEventListener('click', function(e){
     document.querySelector('.nav__collapse').style.display = "none"
@@ -171,7 +182,7 @@ window.addEventListener('resize', function () {
     else{
         document.querySelector('.navbar__search--form').style.display = "none";
         document.querySelector('.nav__search--close').style.display = "none";
-        document.querySelector('.nav__search').style.display = "flex";        
+        // document.querySelector('.nav__search').style.display = "flex";        
     }
 
 });
@@ -193,9 +204,34 @@ document.querySelectorAll('.navbar__item--dropdown').forEach(element => {
 
 const tileCards = document.querySelectorAll('.tiles__card');
 
-document.querySelectorAll('.tiles__card').forEach((element, index) => {
+function selectTiles(e) {
+    const briefing = document.querySelector(`[data-id=${this.id}]`);  
     const briefings = document.querySelectorAll('.briefing');
+
+    document.querySelectorAll('.tiles__card').forEach((element1, index) => {
+        element1.classList.remove('tiles__active');
+    });
+
+    briefings.forEach((briefing, index1) => {
+        if(index === index1){
+            briefing.style.display = 'flex';
+        }
+        else{
+            briefing.style.display = 'none';
+        }
+    })
+    
+    this.classList.add('tiles__active');
+    
+
+    briefing.style.display = 'flex';
+
+}
+
+document.querySelectorAll('.tiles__card').forEach((element, index) => {
     element.addEventListener('click', function (e) {
+        const briefings = document.querySelectorAll('.briefing');
+
         e.preventDefault();
         document.querySelectorAll('.tiles__card').forEach((element1, index) => {
             
@@ -205,23 +241,46 @@ document.querySelectorAll('.tiles__card').forEach((element, index) => {
             }
             else{
             element1.classList.add('tiles__active');
-
+    
             }
         });
         briefings.forEach((briefing, index1) => {
-
+    
             if(index === index1){
-
+    
                 briefing.style.display = 'flex';
             }
             else{
                 briefing.style.display = 'none';
-
+    
             }
         })
     });
 
 });
+
+document.querySelectorAll('.dots').forEach(function(element, index) {
+    element.addEventListener('click', function(e) {
+        console.log(this)
+        
+        document.querySelectorAll('.dots').forEach(dot => {
+            if (dot === this) {
+                this.classList.add('dots__active');
+            }    
+            else{
+                dot.classList.remove('dots__active');
+            }
+    
+        });
+
+        const width = document.querySelector('.testimonial').clientWidth;
+        const transform = width * (index);
+        document.querySelectorAll('.testimonial__card').forEach((element1, index1) => {
+            element.classList.add('dots__active');        
+            element1.style.transform = `translateX(-${transform}px)`;
+        });
+    });
+})
 
 window.addEventListener('load', () => {
     const hash = this.location.href.split('#')[1]

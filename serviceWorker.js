@@ -6,7 +6,7 @@ const assets = [
   "/growthlyne//contact.html",
   "/growthlyne//knowledgelibrary.html",
   "/growthlyne//offerings.html",
-  "/growthlyne/css/style.css",
+  "/growthlyne/css/style1.css",
   "/growthlyne/js/main.js",
   "/growthlyne/images/business-improvements-1024x576.jpg",
   "/growthlyne/images/Professional-Headshot-6.jpg"

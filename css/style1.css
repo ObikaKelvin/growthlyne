@@ -52,12 +52,17 @@ p{
 }
 
 .sticky{
-    position: fixed;
+    position: fixed !important;
+    /* position: fixed !important; */
     top: 0;
     width: 100%;
     transform: translateY(0);
     background-color: #f7f7f7 !important;
     transition: transform .3s ease-in;
+}
+
+.sticky__sub{
+    background-color: #f7f7f7 !important;
 }
 
 #top{
@@ -183,6 +188,7 @@ p{
 .navbar__search--form{
     flex: 1;
     display: flex;
+    visibility: hidden;
     justify-content: flex-end;
 }
 
@@ -485,19 +491,51 @@ p{
 
 .banner__image {
     width: 100%;
-    height: inherit;
+    height: inherit;    
+    position: absolute;
+    z-index: 1;
+}
+
+.banner__image--offerings {
+    background: url(../images/Services2.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.banner__image--index {
     background: url(../images/business-improvements-1024x576.jpg);
     background-size: cover;
     background-position: center;
-    position: absolute;
-    top: 0;
-    z-index: 1;
+}
+
+.banner__image--about {
+    background: url(../images/about.png);
+    background-size: cover;
+    background-position: center;
+}
+
+.banner__image--knowledge {
+    background: url(../images/journal-books-lights-open-wallpaper.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.banner__image--contact {
+    background: url(../images/contact-us.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.banner__image--career {
+    background: url(../images/joine.jpg);
+    background-size: cover;
+    background-position: center;
 }
 
 .banner__overlay{
     position: absolute;
     background-color: var(--black-light);
-    opacity: .64;
+    opacity: .74;
     height: 100rem;
     width: 100%;
     z-index: 2;
@@ -724,14 +762,35 @@ a.btn__hollow{
 }
 
 .testimonial__header{
-    margin-bottom: 12rem;
+    margin-bottom: 8rem;
 }
 
 .testimonial{
     display: flex;
+    width: 100%;
+    overflow: hidden;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 4rem;
+    flex: 0 0 100%;
+    /* overflow-x: hidden; */
+    /* width: 100%; */
+    max-width: 1380px;
+    padding: 4rem 0;
+    /* margin-right: 10rem; */
+}
+
+.testimonial__set{
+    display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 4rem;
+    flex: 0 0 100%;
+    /* overflow-x: hidden; */
+    /* width: 100%; */
+    /* max-width: 150rem; */
+    padding: 4rem 0;
+    /* margin-right: 10rem; */
 }
 
 .testimonial__card{
@@ -741,11 +800,13 @@ a.btn__hollow{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    transform: translateX(0px);
     align-items: center;
+    transition: all .6s ease-in;
 }
 
-.testimonial>*:not(:last-child){
-    margin-right: 8rem;
+.testimonial__card{
+    margin-right: 4rem;
 }
 
 .testimonial__card--img{
@@ -940,10 +1001,15 @@ a.btn__hollow{
     margin-bottom: 1rem;
 }
 
-.footer__list--link{
+.footer__list--link,
+.footer__list--link:link,
+.footer__list--link:visited
+{
     color: var(--grey-light-1);
+    text-decoration: none;
     font-size: 1.8rem;
     text-transform: capitalize;
+    cursor: pointer;
 }
 
 .footer__list--link:hover{
@@ -974,11 +1040,6 @@ a.btn__hollow{
     display: flex;
     align-items: center;
     margin-bottom: 2rem;
-}
-
-.contact__info--container{
-    background-color: var(--black-light);
-    padding: 2rem;
 }
 
 .contact__info--icon{
@@ -1041,7 +1102,7 @@ a.btn__hollow{
 }
 
 .tiles__card:focus{
-    background-color: var(--blue-light);
+    outline: none;
 }
 
 
@@ -1203,7 +1264,7 @@ a.btn__hollow{
     }
 
     .testimonial>*:not(:last-child){
-        margin-right: 4rem;
+        margin-right: 5rem;
     }
 
     .navbar{
@@ -1371,6 +1432,11 @@ a.btn__hollow{
         margin: 0; 
         width: 40%;
     }
+
+    .testimonial>*:not(:last-child) {
+        margin-right: 2rem;
+    }
+
 }
 
 @media only screen and (max-width: 1150px){
@@ -1387,6 +1453,10 @@ a.btn__hollow{
 
     .testimonial>*:nth-last-child(2){
         margin-right: 0;
+    }
+
+    .coming__soon{
+        /* flex-direction: column; */
     }
 
 
@@ -1434,10 +1504,10 @@ a.btn__hollow{
     }
 
     .form-group:not(:last-child) {
-        margin-bottom: 2rem;
+        margin-bottom: 4rem;
     }
 
-    .form-input:not(:last-child) {
+    .form-input {
         width: 100%;
     }
 
@@ -1472,9 +1542,12 @@ a.btn__hollow{
     }
 
     
-    .nav__search{
+    /* .nav__search{
         display: flex;
-    }
+    } */
+
+    .navbar__logo{align-self: center;}
+    .navbar{ justify-content: flex-start;}
 }
 
 @media only screen and (max-width: 750px){
@@ -1552,9 +1625,9 @@ a.btn__hollow{
 
 @media only screen and (max-width: 500px){
 
-    .form-row{
+    /* .form-row{
         width: 30rem;
-    }
+    } */
 
     .header__sub{
         font-size: 1.4rem;
@@ -1606,7 +1679,7 @@ a.btn__hollow{
 @media only screen and (max-width: 450px){
 
     .form-row{
-        width: 20rem;
+        width: 27rem;
     }
 
     .container{
@@ -1662,6 +1735,10 @@ a.btn__hollow{
     .tiles__text{
         font-size: 8px
     }
+
+    .steps__container {
+        top: -9.8rem;
+    }    
 }
 
 @media only screen and (max-width: 400px){
@@ -1743,9 +1820,9 @@ a.btn__hollow{
 
 @media only screen and (max-width: 350px){
 
-    .form-row{
+    /* .form-row{
         width: 15rem;
-    }
+    } */
 
     .approach__card--footer{
         width: 100%;
@@ -1768,3 +1845,16 @@ a.btn__hollow{
     
 }
 
+.coming__soon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5rem 0;
+}
+
+.coming__soon .content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
